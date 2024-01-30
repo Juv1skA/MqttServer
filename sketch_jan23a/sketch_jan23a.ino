@@ -3,8 +3,8 @@
 #include <Wire.h>
 #include "DHT.h"
 
-#define DHTTYPE DHT11 // sensor type
-#define DHTPIN 34 // middle pin
+#define DHTTYPE DHT11
+#define DHTPIN 34
 
 const char* ssid = "PIENKONE";
 const char* password = "12345679";
@@ -26,13 +26,16 @@ void setup() {
   digitalWrite(LED_OUTPUT_PIN, HIGH);
   dht.begin();
 
-  /*setup_wifi();
+  /*
+  setup_wifi();
   client.setServer(mqtt_server, 1234);
-  client.setCallback(callback);*/
+  client.setCallback(callback);
+  */
 }
 
 void loop() {
-  /*if (!client.connected()) {
+  /*
+  if (!client.connected()) {
     reconnect();
   }
   client.loop();*/
@@ -46,13 +49,12 @@ void loop() {
   Serial.print(t);
   Serial.println();
 
-  /*char message[50];
+  char message[50];
   snprintf(message, 50, "Hello from ESP32 at %ld", millis());
   client.publish("esp32/test", message);
   Serial.print("Message sent: ");
   Serial.println(message);
-  delay(5000);*/
-  delay(2000);
+  delay(5000);
 }
 
 
